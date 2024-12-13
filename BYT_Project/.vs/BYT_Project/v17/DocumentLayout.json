@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Mateusz\\source\\repos\\BYT_Project\\",
+  "WorkspaceRootPath": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\",
   "Documents": [],
   "DocumentGroupContainers": [
     {
@@ -8,17 +8,17 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 275,
+          "DockedWidth": 293,
           "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             }
           ]
         },
         {
-          "DockedWidth": 200,
+          "DockedWidth": 182,
           "SelectedChildIndex": -1,
           "Children": [
             {

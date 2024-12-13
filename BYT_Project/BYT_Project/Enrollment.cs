@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace BYT_Project
@@ -12,6 +13,7 @@ namespace BYT_Project
         private string _status;
         private int _totalScore;
         private string _gradeLetter;
+        private Certificate? _certificate; // Association with Certificate
 
         public int EnrollmentID
         {
@@ -48,7 +50,10 @@ namespace BYT_Project
 
         public string GradeLetter => _gradeLetter;
 
+        public Certificate? Certificate => _certificate; // Getter for Certificate
+
         public Enrollment() { }
+
         public Enrollment(int enrollmentID, DateTime enrollmentDate, string status, int totalScore)
         {
             EnrollmentID = enrollmentID;
@@ -67,6 +72,46 @@ namespace BYT_Project
             else if (_totalScore >= 50) _gradeLetter = "E";
             else _gradeLetter = "F";
         }
+
+        public void SetCertificate(Certificate certificate)
+        {
+            if (_certificate == certificate) return;
+
+            // Remove from the old certificate only if it is truly associated
+            if (_certificate != null && _certificate.Enrollments.Contains(this))
+            {
+                _certificate.RemoveEnrollment(this);
+            }
+
+            _certificate = certificate;
+
+            if (certificate != null && !certificate.Enrollments.Contains(this))
+            {
+                certificate.AddEnrollment(this);
+            }
+        }
+
+
+
+
+
+
+
+
+        public void RemoveCertificate()
+        {
+            if (_certificate == null) return;
+
+            var tempCertificate = _certificate;
+            _certificate = null;
+
+            // Reverse connection removal
+            if (tempCertificate.Enrollments.Contains(this))
+            {
+                tempCertificate.RemoveEnrollment(this);
+            }
+        }
+
 
         public static void SaveEnrollments(string path = "enrollment.xml")
         {
@@ -107,6 +152,7 @@ namespace BYT_Project
                 return false;
             }
         }
+
         public static List<Enrollment> EnrollmentsList => new List<Enrollment>(enrollmentsList);
     }
 }

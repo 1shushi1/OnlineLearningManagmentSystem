@@ -1,12 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{A2246059-34C1-4104-9CEB-80BBBD73B173}|Project_Tests\\Project_Tests.csproj|c:\\users\\bemro\\source\\repos\\onlinelearningmanagmentsystem\\byt_project\\project_tests\\relation_tests\\lessonquizrelationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2246059-34C1-4104-9CEB-80BBBD73B173}|Project_Tests\\Project_Tests.csproj|solutionrelative:project_tests\\relation_tests\\lessonquizrelationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -14,24 +9,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 293,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
+            }
+          ]
+        },
+        {
+          "DockedWidth": 182,
+          "SelectedChildIndex": -1,
+          "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LessonQuizRelationTests.cs",
-              "DocumentMoniker": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\Project_Tests\\Relation_Tests\\LessonQuizRelationTests.cs",
-              "RelativeDocumentMoniker": "Project_Tests\\Relation_Tests\\LessonQuizRelationTests.cs",
-              "ToolTip": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\Project_Tests\\Relation_Tests\\LessonQuizRelationTests.cs",
-              "RelativeToolTip": "Project_Tests\\Relation_Tests\\LessonQuizRelationTests.cs",
-              "ViewState": "AgIAAIQAAAAAAAAAAAAuwIsAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-13T19:29:47.887Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             }
           ]
         }

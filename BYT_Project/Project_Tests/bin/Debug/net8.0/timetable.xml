@@ -2,8 +2,8 @@
 <ArrayOfTimetable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Timetable>
     <TimetableID>1</TimetableID>
-    <StartDate>2024-12-13T20:34:24.3164297+01:00</StartDate>
-    <EndDate>2025-01-13T20:34:24.3164308+01:00</EndDate>
+    <StartDate>2024-12-13T21:18:57.5708335+01:00</StartDate>
+    <EndDate>2025-01-13T21:18:57.5708347+01:00</EndDate>
     <Schedule>
       <Entry>Mon 10:00 AM</Entry>
       <Entry>Wed 10:00 AM</Entry>

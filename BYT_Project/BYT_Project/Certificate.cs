@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace BYT_Project
@@ -10,6 +11,7 @@ namespace BYT_Project
         private int _certificateID;
         private DateTime _completionDate;
         private string _certificateDescription;
+        private List<Enrollment> _enrollments = new List<Enrollment>(); // Association with Enrollment
 
         public int CertificateID
         {
@@ -41,6 +43,8 @@ namespace BYT_Project
             }
         }
 
+        public IReadOnlyList<Enrollment> Enrollments => _enrollments.AsReadOnly(); // Encapsulated list
+
         public Certificate() { }
 
         public Certificate(int certificateID, DateTime completionDate, string certificateDescription)
@@ -50,6 +54,43 @@ namespace BYT_Project
             CertificateDescription = certificateDescription;
             certificatesList.Add(this);
         }
+
+        public void AddEnrollment(Enrollment enrollment)
+        {
+            if (enrollment == null) throw new ArgumentNullException(nameof(enrollment));
+            if (_enrollments.Contains(enrollment))
+                throw new ArgumentException("Enrollment is already associated with this certificate.");
+            if (enrollment.Certificate != null && enrollment.Certificate != this)
+                throw new ArgumentException("Enrollment is already associated with another certificate.");
+
+            _enrollments.Add(enrollment);
+            enrollment.SetCertificate(this);
+        }
+
+
+
+
+        public void RemoveEnrollment(Enrollment enrollment)
+        {
+            if (enrollment == null || !_enrollments.Contains(enrollment))
+                throw new ArgumentException("Enrollment is not associated with this certificate.");
+
+            _enrollments.Remove(enrollment);
+
+            // Reverse connection check
+            if (enrollment.Certificate == this)
+            {
+                enrollment.RemoveCertificate();
+            }
+        }
+
+
+
+
+
+
+
+
 
         public static void SaveCertificates(string path = "certificate.xml")
         {

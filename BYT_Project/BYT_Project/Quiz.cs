@@ -13,6 +13,7 @@ namespace BYT_Project
         private int _passMark;
         private Dictionary<string, Question> _questions = new Dictionary<string, Question>(); // Qualified association
         private List<Quiz> _relatedQuizzes = new List<Quiz>(); // Reflex association - relates to other quizzes
+        private Lesson? _lesson;
 
         public int QuizID
         {
@@ -33,6 +34,8 @@ namespace BYT_Project
                 _title = value;
             }
         }
+
+        public Lesson? Lesson => _lesson;
 
         public int TotalScore
         {
@@ -117,6 +120,7 @@ namespace BYT_Project
         }
 
 
+
         public static void SaveQuizzes(string path = "quiz.xml")
         {
             try
@@ -156,6 +160,37 @@ namespace BYT_Project
                 return false;
             }
         }
+
+        public void AssignToLesson(Lesson lesson)
+        {
+            if (lesson == null) throw new ArgumentNullException(nameof(lesson));
+
+            if (_lesson == lesson) return; 
+
+            _lesson?.RemoveQuiz(this);
+
+            _lesson = lesson;
+
+            if (!lesson.Quizzes.Contains(this))
+            {
+                lesson.AddQuiz(this);
+            }
+        }
+
+        public void RemoveLesson()
+        {
+            if (_lesson == null) return;
+
+            var tempLesson = _lesson;
+            _lesson = null;
+
+            if (tempLesson.Quizzes.Contains(this))
+            {
+                tempLesson.RemoveQuiz(this);
+            }
+        }
+
+
         public static List<Quiz> QuizzesList => new List<Quiz>(quizzesList);
     }
 }

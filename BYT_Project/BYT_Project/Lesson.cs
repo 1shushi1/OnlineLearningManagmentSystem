@@ -13,6 +13,10 @@ namespace BYT_Project
         private string _lessonDescription;
         private Course _course;
         private List<Assignment> _assignments = new List<Assignment>();
+        private List<Quiz> quizzes = new List<Quiz>();
+
+
+        public IReadOnlyList<Quiz> Quizzes => quizzes.AsReadOnly();
 
         public int LessonID
         {
@@ -147,8 +151,14 @@ namespace BYT_Project
                 lesson.RemoveAssignment(assignment);
             }
 
+            foreach (var quiz in new List<Quiz>(lesson.quizzes))
+            {
+                lesson.RemoveQuiz(quiz); 
+            }
+
             lessonsList.Remove(lesson);
         }
+
 
         public static void SaveLessons(string path = "lesson.xml")
         {
@@ -189,6 +199,27 @@ namespace BYT_Project
                 return false;
             }
         }
+
+
+        public void AddQuiz(Quiz quiz)
+        {
+            if (quiz == null) throw new ArgumentNullException(nameof(quiz));
+            if (quizzes.Contains(quiz)) throw new ArgumentException("Quiz is already added to this lesson.");
+            if (quiz.Lesson != null && quiz.Lesson != this)
+                throw new ArgumentException("Quiz is already associated with another lesson.");
+
+            quizzes.Add(quiz);
+            quiz.AssignToLesson(this);
+        }
+
+        public void RemoveQuiz(Quiz quiz)
+        {
+            if (quiz == null) throw new ArgumentNullException(nameof(quiz));
+            if (!quizzes.Remove(quiz)) throw new ArgumentException("Quiz is not associated with this lesson.");
+
+            quiz.RemoveLesson();
+        }
+
         public static List<Lesson> LessonsList => new List<Lesson>(lessonsList);
     }
 }

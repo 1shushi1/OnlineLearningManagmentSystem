@@ -1,0 +1,14 @@
+C:\Users\Mateusz\source\repos\BYT_Project\BYT_Project\obj\Debug\net8.0\BYT_Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mateusz\source\repos\BYT_Project\BYT_Project\obj\Debug\net8.0\BYT_Project.AssemblyInfoInputs.cache
+C:\Users\Mateusz\source\repos\BYT_Project\BYT_Project\obj\Debug\net8.0\BYT_Project.AssemblyInfo.cs
+C:\Users\Mateusz\source\repos\BYT_Project\BYT_Project\obj\Debug\net8.0\BYT_Project.csproj.CoreCompileInputs.cache
+C:\Users\Mateusz\source\repos\BYT_Project\BYT_Project\bin\Debug\net8.0\BYT_Project.exe
+C:\Users\Mateusz\source\repos\BYT_Project\BYT_Project\bin\Debug\net8.0\BYT_Project.deps.json
+C:\Users\Mateusz\source\repos\BYT_Project\BYT_Project\bin\Debug\net8.0\BYT_Project.runtimeconfig.json
+C:\Users\Mateusz\source\repos\BYT_Project\BYT_Project\bin\Debug\net8.0\BYT_Project.dll
+C:\Users\Mateusz\source\repos\BYT_Project\BYT_Project\bin\Debug\net8.0\BYT_Project.pdb
+C:\Users\Mateusz\source\repos\BYT_Project\BYT_Project\obj\Debug\net8.0\BYT_Project.dll
+C:\Users\Mateusz\source\repos\BYT_Project\BYT_Project\obj\Debug\net8.0\refint\BYT_Project.dll
+C:\Users\Mateusz\source\repos\BYT_Project\BYT_Project\obj\Debug\net8.0\BYT_Project.pdb
+C:\Users\Mateusz\source\repos\BYT_Project\BYT_Project\obj\Debug\net8.0\BYT_Project.genruntimeconfig.cache
+C:\Users\Mateusz\source\repos\BYT_Project\BYT_Project\obj\Debug\net8.0\ref\BYT_Project.dll

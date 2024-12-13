@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\Project_Tests\\Project_Tests.csproj": {}
+    "C:\\Users\\bemro\\Source\\Repos\\OnlineLearningManagmentSystem\\BYT_Project\\Project_Tests\\Project_Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\BYT_Project\\BYT_Project.csproj": {
+    "C:\\Users\\bemro\\Source\\Repos\\OnlineLearningManagmentSystem\\BYT_Project\\BYT_Project\\BYT_Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\BYT_Project\\BYT_Project.csproj",
+        "projectUniqueName": "C:\\Users\\bemro\\Source\\Repos\\OnlineLearningManagmentSystem\\BYT_Project\\BYT_Project\\BYT_Project.csproj",
         "projectName": "BYT_Project",
-        "projectPath": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\BYT_Project\\BYT_Project.csproj",
+        "projectPath": "C:\\Users\\bemro\\Source\\Repos\\OnlineLearningManagmentSystem\\BYT_Project\\BYT_Project\\BYT_Project.csproj",
         "packagesPath": "C:\\Users\\bemro\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\bemro\\Source\\Repos\\OnlineLearningManagmentSystem\\BYT_Project\\BYT_Project\\obj\\",
         "projectStyle": "PackageReference",
@@ -64,14 +64,14 @@
         }
       }
     },
-    "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\Project_Tests\\Project_Tests.csproj": {
+    "C:\\Users\\bemro\\Source\\Repos\\OnlineLearningManagmentSystem\\BYT_Project\\Project_Tests\\Project_Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\Project_Tests\\Project_Tests.csproj",
+        "projectUniqueName": "C:\\Users\\bemro\\Source\\Repos\\OnlineLearningManagmentSystem\\BYT_Project\\Project_Tests\\Project_Tests.csproj",
         "projectName": "Project_Tests",
-        "projectPath": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\Project_Tests\\Project_Tests.csproj",
+        "projectPath": "C:\\Users\\bemro\\Source\\Repos\\OnlineLearningManagmentSystem\\BYT_Project\\Project_Tests\\Project_Tests.csproj",
         "packagesPath": "C:\\Users\\bemro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bemro\\Source\\Repos\\OnlineLearningManagmentSystem\\BYT_Project\\Project_Tests\\obj\\",
+        "outputPath": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\Project_Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bemro\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -88,8 +88,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\BYT_Project\\BYT_Project.csproj": {
-                "projectPath": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\BYT_Project\\BYT_Project.csproj"
+              "C:\\Users\\bemro\\Source\\Repos\\OnlineLearningManagmentSystem\\BYT_Project\\BYT_Project\\BYT_Project.csproj": {
+                "projectPath": "C:\\Users\\bemro\\Source\\Repos\\OnlineLearningManagmentSystem\\BYT_Project\\BYT_Project\\BYT_Project.csproj"
               }
             }
           }

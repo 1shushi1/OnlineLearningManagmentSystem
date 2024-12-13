@@ -11,6 +11,8 @@ namespace BYT_Project
         private DateTime _startDate;
         private DateTime _endDate;
         private List<string> _schedule = new List<string>();
+        private List<Course> _courses = new List<Course>(); 
+        public IReadOnlyList<Course> Courses => _courses.AsReadOnly();
 
         public int TimetableID
         {
@@ -115,6 +117,38 @@ namespace BYT_Project
             }
 
         }
+
+        public void AddCourse(Course course)
+        {
+            if (course == null) throw new ArgumentNullException(nameof(course));
+            if (_courses.Contains(course))
+            {
+                throw new ArgumentException("Course is already added to this timetable.");
+            }
+
+            _courses.Add(course);
+
+            if (course.Timetable != this)
+            {
+                course.SetTimetable(this);
+            }
+        }
+
+
+        public void RemoveCourse(Course course)
+        {
+            if (course == null) throw new ArgumentNullException(nameof(course));
+            if (!_courses.Remove(course))
+            {
+                throw new ArgumentException("Course is not associated with this timetable.");
+            }
+
+            if (course.Timetable == this)
+            {
+                course.RemoveTimetable();
+            }
+        }
+
 
         public static List<Timetable> TimetableList => new List<Timetable>(timetableList);
     }

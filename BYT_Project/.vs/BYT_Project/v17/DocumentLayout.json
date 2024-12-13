@@ -1,7 +1,28 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{316C46EA-F0D7-4919-840E-2DD0C7FA1E21}|BYT_Project\\BYT_Project.csproj|c:\\users\\bemro\\source\\repos\\onlinelearningmanagmentsystem\\byt_project\\byt_project\\instructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{316C46EA-F0D7-4919-840E-2DD0C7FA1E21}|BYT_Project\\BYT_Project.csproj|solutionrelative:byt_project\\instructor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2246059-34C1-4104-9CEB-80BBBD73B173}|Project_Tests\\Project_Tests.csproj|c:\\users\\bemro\\source\\repos\\onlinelearningmanagmentsystem\\byt_project\\project_tests\\relation_tests\\coursetimetablerelationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2246059-34C1-4104-9CEB-80BBBD73B173}|Project_Tests\\Project_Tests.csproj|solutionrelative:project_tests\\relation_tests\\coursetimetablerelationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{316C46EA-F0D7-4919-840E-2DD0C7FA1E21}|BYT_Project\\BYT_Project.csproj|c:\\users\\bemro\\source\\repos\\onlinelearningmanagmentsystem\\byt_project\\byt_project\\timetable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{316C46EA-F0D7-4919-840E-2DD0C7FA1E21}|BYT_Project\\BYT_Project.csproj|solutionrelative:byt_project\\timetable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{316C46EA-F0D7-4919-840E-2DD0C7FA1E21}|BYT_Project\\BYT_Project.csproj|c:\\users\\bemro\\source\\repos\\onlinelearningmanagmentsystem\\byt_project\\byt_project\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{316C46EA-F0D7-4919-840E-2DD0C7FA1E21}|BYT_Project\\BYT_Project.csproj|solutionrelative:byt_project\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2246059-34C1-4104-9CEB-80BBBD73B173}|Project_Tests\\Project_Tests.csproj|c:\\users\\bemro\\source\\repos\\onlinelearningmanagmentsystem\\byt_project\\project_tests\\relation_tests\\instructorcourserelationtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2246059-34C1-4104-9CEB-80BBBD73B173}|Project_Tests\\Project_Tests.csproj|solutionrelative:project_tests\\relation_tests\\instructorcourserelationtest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +30,76 @@
       "DocumentGroups": [
         {
           "DockedWidth": 293,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Instructor.cs",
+              "DocumentMoniker": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\BYT_Project\\Instructor.cs",
+              "RelativeDocumentMoniker": "BYT_Project\\Instructor.cs",
+              "ToolTip": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\BYT_Project\\Instructor.cs",
+              "RelativeToolTip": "BYT_Project\\Instructor.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAYwFgAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T19:18:36.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "InstructorCourseRelationTest.cs",
+              "DocumentMoniker": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\Project_Tests\\Relation_Tests\\InstructorCourseRelationTest.cs",
+              "RelativeDocumentMoniker": "Project_Tests\\Relation_Tests\\InstructorCourseRelationTest.cs",
+              "ToolTip": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\Project_Tests\\Relation_Tests\\InstructorCourseRelationTest.cs",
+              "RelativeToolTip": "Project_Tests\\Relation_Tests\\InstructorCourseRelationTest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T19:16:26.757Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CourseTimetableRelationTests.cs",
+              "DocumentMoniker": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\Project_Tests\\Relation_Tests\\CourseTimetableRelationTests.cs",
+              "RelativeDocumentMoniker": "Project_Tests\\Relation_Tests\\CourseTimetableRelationTests.cs",
+              "ToolTip": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\Project_Tests\\Relation_Tests\\CourseTimetableRelationTests.cs",
+              "RelativeToolTip": "Project_Tests\\Relation_Tests\\CourseTimetableRelationTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T19:12:09.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Timetable.cs",
+              "DocumentMoniker": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\BYT_Project\\Timetable.cs",
+              "RelativeDocumentMoniker": "BYT_Project\\Timetable.cs",
+              "ToolTip": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\BYT_Project\\Timetable.cs",
+              "RelativeToolTip": "BYT_Project\\Timetable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJEAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T19:03:39.006Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Course.cs",
+              "DocumentMoniker": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\BYT_Project\\Course.cs",
+              "RelativeDocumentMoniker": "BYT_Project\\Course.cs",
+              "ToolTip": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\BYT_Project\\Course.cs",
+              "RelativeToolTip": "BYT_Project\\Course.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIUAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-13T19:02:59.148Z",
+              "EditorCaption": ""
             }
           ]
         },

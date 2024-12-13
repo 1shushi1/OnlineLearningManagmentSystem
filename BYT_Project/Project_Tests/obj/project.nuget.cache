@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tzEHaRlPhv8=",
+  "dgSpecHash": "t4HSMaH2IAM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\Project_Tests\\Project_Tests.csproj",
+  "projectFilePath": "C:\\Users\\bemro\\Source\\Repos\\OnlineLearningManagmentSystem\\BYT_Project\\Project_Tests\\Project_Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bemro\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\bemro\\.nuget\\packages\\microsoft.codecoverage\\17.8.0\\microsoft.codecoverage.17.8.0.nupkg.sha512",

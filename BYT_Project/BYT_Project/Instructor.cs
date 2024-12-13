@@ -70,7 +70,6 @@ namespace BYT_Project
 
             courses.Add(course);
 
-            // Establish reverse connection if not already set
             if (course.Instructor != this)
             {
                 course.SetInstructor(this);
@@ -82,12 +81,11 @@ namespace BYT_Project
         public void RemoveCourse(Course course)
         {
             if (course == null) throw new ArgumentNullException(nameof(course));
-            if (!courses.Remove(course)) // Attempt to remove and check if it exists
+            if (!courses.Remove(course)) 
             {
                 throw new ArgumentException("Course is not added to this instructor.");
             }
 
-            // Remove reverse connection only if the course is still pointing to this instructor
             if (course.Instructor == this)
             {
                 course.RemoveInstructor();

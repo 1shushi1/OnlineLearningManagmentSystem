@@ -11,7 +11,6 @@ namespace Project_Tests.Relation_Tests
         [SetUp]
         public void Setup()
         {
-            // Reset static fields to ensure clean tests
             typeof(Instructor)
                 .GetField("instructorsList", System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Static)
                 ?.SetValue(null, new List<Instructor>());

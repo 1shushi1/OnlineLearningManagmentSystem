@@ -15,6 +15,8 @@ namespace BYT_Project
         private List<Student> _students = new List<Student>();
         private List<Lesson> _lessons = new List<Lesson>();
         private Instructor? _instructor;
+        private Timetable? _timetable;
+        public Timetable? Timetable => _timetable;
 
         public int CourseID
         {
@@ -129,7 +131,6 @@ namespace BYT_Project
         {
             if (_instructor == instructor) return;
 
-            // Remove this course from the current instructor
             if (_instructor != null)
             {
                 _instructor.RemoveCourse(this);
@@ -137,7 +138,6 @@ namespace BYT_Project
 
             _instructor = instructor;
 
-            // Add this course to the new instructor's list if not already present
             if (instructor != null && !instructor.Courses.Contains(this))
             {
                 instructor.AddCourse(this);
@@ -153,7 +153,6 @@ namespace BYT_Project
             var tempInstructor = _instructor;
             _instructor = null;
 
-            // Remove this course from the instructor's list if it's still present
             if (tempInstructor.Courses.Contains(this))
             {
                 tempInstructor.RemoveCourse(this);
@@ -202,6 +201,40 @@ namespace BYT_Project
                 return false;
             }
         }
+
+
+        public void SetTimetable(Timetable? timetable)
+        {
+            if (_timetable == timetable) return;
+
+            if (_timetable != null)
+            {
+                _timetable.RemoveCourse(this);
+            }
+
+            _timetable = timetable;
+
+            if (timetable != null && !timetable.Courses.Contains(this))
+            {
+                timetable.AddCourse(this);
+            }
+        }
+
+
+        public void RemoveTimetable()
+        {
+            if (_timetable == null) return;
+
+            var tempTimetable = _timetable;
+            _timetable = null;
+
+            if (tempTimetable.Courses.Contains(this))
+            {
+                tempTimetable.RemoveCourse(this);
+            }
+        }
+
+
 
         public static List<Course> CoursesList => new List<Course>(coursesList);
     }

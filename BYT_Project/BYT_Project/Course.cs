@@ -14,6 +14,7 @@ namespace BYT_Project
         private int _maxEnrollment;
         private List<Student> _students = new List<Student>();
         private List<Lesson> _lessons = new List<Lesson>();
+        private Instructor? _instructor;
 
         public int CourseID
         {
@@ -57,6 +58,7 @@ namespace BYT_Project
 
         public IReadOnlyList<Student> Students => _students.AsReadOnly();
         public IReadOnlyList<Lesson> Lessons => _lessons.AsReadOnly();
+        public Instructor? Instructor => _instructor;
 
         public Course() { }
 
@@ -68,10 +70,12 @@ namespace BYT_Project
             MaxEnrollment = maxEnrollment;
             coursesList.Add(this);
         }
+
         public void AddStudent(Student student)
         {
             if (student == null) throw new ArgumentException("Student cannot be null.");
-            if (_students.Contains(student)) throw new ArgumentException("Student is already added to this course.");
+            if (_students.Contains(student)) throw new ArgumentException("Student is already enrolled in this course.");
+            if (_students.Count >= MaxEnrollment) throw new InvalidOperationException("Course has reached maximum enrollment.");
 
             _students.Add(student);
             if (!student.Courses.Contains(this))
@@ -83,30 +87,31 @@ namespace BYT_Project
         public void RemoveStudent(Student student)
         {
             if (student == null) throw new ArgumentException("Student cannot be null.");
-            if (!_students.Remove(student)) throw new ArgumentException("Student is not added to this course.");
-
+            if (!_students.Remove(student)) throw new ArgumentException("Student is not enrolled in this course.");
             if (student.Courses.Contains(this))
             {
                 student.RemoveCourse(this); 
             }
         }
+
         public void UpdateStudent(Student oldStudent, Student newStudent)
         {
             if (oldStudent == null || newStudent == null)
                 throw new ArgumentException("Both old and new students must be provided.");
 
             RemoveStudent(oldStudent);
+
             AddStudent(newStudent);
         }
+
         public void AddLesson(Lesson lesson)
         {
             if (lesson == null) throw new ArgumentException("Lesson cannot be null.");
             if (_lessons.Contains(lesson)) throw new ArgumentException("Lesson is already added to this course.");
-
             _lessons.Add(lesson);
-            if (lesson.Course != this) 
+            if (lesson.Course != this)
             {
-                lesson.AssignToCourse(this);
+                lesson.AssignToCourse(this); 
             }
         }
 
@@ -114,23 +119,51 @@ namespace BYT_Project
         {
             if (lesson == null) throw new ArgumentException("Lesson cannot be null.");
             if (!_lessons.Remove(lesson)) throw new ArgumentException("Lesson is not added to this course.");
-
-            if (lesson.Course == this) 
+            if (lesson.Course == this)
             {
-                lesson.RemoveCourse();
+                lesson.RemoveCourse(); 
             }
         }
 
-        public void UpdateLesson(Lesson oldLesson, Lesson newLesson)
+        public void SetInstructor(Instructor? instructor)
         {
-            if (oldLesson == null || newLesson == null)
-                throw new ArgumentException("Both old and new lessons must be provided.");
+            if (_instructor == instructor) return;
 
-            RemoveLesson(oldLesson);
-            AddLesson(newLesson);
+            // Remove this course from the current instructor
+            if (_instructor != null)
+            {
+                _instructor.RemoveCourse(this);
+            }
+
+            _instructor = instructor;
+
+            // Add this course to the new instructor's list if not already present
+            if (instructor != null && !instructor.Courses.Contains(this))
+            {
+                instructor.AddCourse(this);
+            }
         }
 
-        public static void SaveCourses(string path = "course.xml")
+
+
+        public void RemoveInstructor()
+        {
+            if (_instructor == null) return;
+
+            var tempInstructor = _instructor;
+            _instructor = null;
+
+            // Remove this course from the instructor's list if it's still present
+            if (tempInstructor.Courses.Contains(this))
+            {
+                tempInstructor.RemoveCourse(this);
+            }
+        }
+
+
+
+
+        public static void SaveCourses(string path = "courses.xml")
         {
             try
             {
@@ -146,7 +179,7 @@ namespace BYT_Project
             }
         }
 
-        public static bool LoadCourses(string path = "course.xml")
+        public static bool LoadCourses(string path = "courses.xml")
         {
             try
             {

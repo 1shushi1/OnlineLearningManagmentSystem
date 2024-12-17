@@ -12,6 +12,8 @@ namespace BYT_Project
         private List<Assignment> _assignments = new List<Assignment>(); // zero-to-many relation with Assignment
         private List<Payment> _payments = new List<Payment>(); // zero-to-many relation with Payment, Payment aggregates Student
         private List<Course> _courses = new List<Course>(); // zero-to-many relation with Course
+        private List<Enrollment> enrollments = new List<Enrollment>(); // Many-to-Many with Attribute
+
 
         public int StudentID
         {
@@ -26,6 +28,7 @@ namespace BYT_Project
         public IReadOnlyList<Assignment> Assignments => _assignments.AsReadOnly();
         public IReadOnlyList<Payment> Payments => _payments.AsReadOnly();
         public IReadOnlyList<Course> Courses => _courses.AsReadOnly();
+        public IReadOnlyList<Enrollment> Enrollments => enrollments.AsReadOnly();
 
         public Student() { }
 
@@ -150,6 +153,24 @@ namespace BYT_Project
 
             RemoveCourse(oldCourse);
             AddCourse(newCourse);
+        }
+
+        public void AddEnrollment(Enrollment enrollment)
+        {
+            if (enrollment == null) throw new ArgumentNullException(nameof(enrollment));
+
+            if (enrollments.Contains(enrollment))
+                throw new ArgumentException("Enrollment is already associated with this student.");
+
+            enrollments.Add(enrollment);
+        }
+
+        public void RemoveEnrollment(Enrollment enrollment)
+        {
+            if (enrollment == null) throw new ArgumentNullException(nameof(enrollment));
+
+            if (!enrollments.Remove(enrollment))
+                throw new ArgumentException("Enrollment not found for this student.");
         }
 
         public static void SaveStudents(string path = "students.xml")

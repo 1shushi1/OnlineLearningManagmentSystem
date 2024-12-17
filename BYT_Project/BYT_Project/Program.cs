@@ -50,8 +50,8 @@ namespace BYT_Project
                 Console.WriteLine($"Question Created: {question.Text}, Options: {string.Join(", ", question.Options)}, Correct Answer: {question.CorrectAnswer}");
 
                 // Enrollment creation
-                var enrollment = new Enrollment(1001, DateTime.Now, "Active", 85);
-                Console.WriteLine($"Enrollment Created: ID {enrollment.EnrollmentID}, Status: {enrollment.Status}, Total Score: {enrollment.TotalScore}, Grade: {enrollment.GradeLetter}");
+                //var enrollment = new Enrollment(_student, _course, 1001, DateTime.Now, "Active", 85);
+                //Console.WriteLine($"Enrollment Created: ID {enrollment.EnrollmentID}, Status: {enrollment.Status}, Total Score: {enrollment.TotalScore}, Grade: {enrollment.GradeLetter}");
 
                 // Timetable creation
                 var timetable = new Timetable(1101, DateTime.Now, DateTime.Now.AddMonths(1), new List<string> { "MWF 9-11AM" });
@@ -66,8 +66,8 @@ namespace BYT_Project
                 Console.WriteLine($"Certificate Created: Completion Date: {certificate.CompletionDate}, Description: {certificate.CertificateDescription}");
 
                 // SubmittedAssignment creation
-                var submittedAssignment = new SubmittedAssignment(1401, DateTime.Now);
-                Console.WriteLine($"Submitted Assignment Created: ID {submittedAssignment.SubmissionID}, Submission Date: {submittedAssignment.SubmissionDate}");
+                //var submittedAssignment = new SubmittedAssignment(_student, _assignment, 1401, DateTime.Now);
+                //Console.WriteLine($"Submitted Assignment Created: ID {submittedAssignment.SubmissionID}, Submission Date: {submittedAssignment.SubmissionDate}");
 
                 // Saving and Loading Objects
                 Console.WriteLine("\nSaving and Loading Objects...");

@@ -9,12 +9,13 @@ namespace BYT_Project
     {
         private static List<Enrollment> enrollmentsList = new List<Enrollment>();
         private int _enrollmentID;
-        private DateTime _enrollmentDate;
+        private readonly DateTime _enrollmentDate;
         private string _status;
         private int _totalScore;
         private string _gradeLetter;
         private Certificate? _certificate; // zero-to-one relation with Certificate
-        // To Do - Association Class with Course and Student
+        private readonly Student _student;
+        private readonly Course _course;
 
         public int EnrollmentID
         {
@@ -52,17 +53,61 @@ namespace BYT_Project
         public string GradeLetter => _gradeLetter;
 
         public Certificate? Certificate => _certificate; // Getter for Certificate
+        public Student Student => _student;
+        public Course Course => _course;    
 
         public Enrollment() { }
 
-        public Enrollment(int enrollmentID, DateTime enrollmentDate, string status, int totalScore)
+        public Enrollment(Student student, Course course,int enrollmentID , DateTime enrollmentDate, string status, int totalScore)
         {
-            EnrollmentID = enrollmentID;
+            if (student == null) throw new ArgumentNullException(nameof(student), "Student cannot be null.");
+            if (course == null) throw new ArgumentNullException(nameof(course), "Course cannot be null.");
+            if (totalScore < 0 || totalScore > 100) throw new ArgumentException("Total score must be between 0 and 100.");
+
+            // Prevent duplicate enrollments
+            if (enrollmentsList.Exists(e => e.Student == student && e.Course == course))
+            {
+                throw new ArgumentException("This student is already enrolled in the course.");
+            }
+
+            _enrollmentID = enrollmentID;
             _enrollmentDate = enrollmentDate;
             Status = status;
             TotalScore = totalScore;
+            _student = student;
+            _course = course;
+
             enrollmentsList.Add(this);
+
+            if (!student.Courses.Contains(course))
+            {
+                student.AddCourse(course);
+            }
+            if (!course.Students.Contains(student))
+            {
+                course.AddStudent(student);
+            }
         }
+
+        public static void RemoveEnrollment(Enrollment enrollment)
+        {
+            if (enrollment == null) throw new ArgumentNullException(nameof(enrollment), "Enrollment cannot be null.");
+            if (!enrollmentsList.Remove(enrollment))
+            {
+                throw new ArgumentException("Enrollment does not exist in the global list.");
+            }
+
+            // Reverse disconnection
+            if (enrollment.Student.Courses.Contains(enrollment.Course))
+            {
+                enrollment.Student.RemoveCourse(enrollment.Course);
+            }
+            if (enrollment.Course.Students.Contains(enrollment.Student))
+            {
+                enrollment.Course.RemoveStudent(enrollment.Student);
+            }
+        }
+
 
         private void CalculateGrade()
         {
@@ -105,6 +150,7 @@ namespace BYT_Project
                 tempCertificate.RemoveEnrollment(this);
             }
         }
+
         public static void SaveEnrollments(string path = "enrollment.xml")
         {
             try

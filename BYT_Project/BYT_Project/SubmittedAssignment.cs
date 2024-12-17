@@ -9,8 +9,9 @@ namespace BYT_Project
         private static List<SubmittedAssignment> submissionsList = new List<SubmittedAssignment>();
         private int _submissionID;
         private DateTime _submissionDate;
+        private readonly Student _student;
+        private readonly Assignment _assignment;
 
-        // To Do Association Class relation with Student and Assignment
         public int SubmissionID
         {
             get => _submissionID;
@@ -30,13 +31,55 @@ namespace BYT_Project
                 _submissionDate = value;
             }
         }
+
+        public Student Student => _student;
+        public Assignment Assignment => _assignment;
+
         public SubmittedAssignment() { }
 
-        public SubmittedAssignment(int submissionID, DateTime submissionDate)
+        public SubmittedAssignment(Student student, Assignment assignment, int submissionID, DateTime submissionDate)
         {
+            if (student == null) throw new ArgumentNullException(nameof(student), "Student cannot be null.");
+            if (assignment == null) throw new ArgumentNullException(nameof(assignment), "Assignment cannot be null.");
+
+            if (submissionsList.Exists(s => s.Student == student && s.Assignment == assignment))
+            {
+                throw new ArgumentException("This student has already assigned this task");
+            }
+
             SubmissionID = submissionID;
             SubmissionDate = submissionDate;
+            _student = student;
+            _assignment = assignment;
+
             submissionsList.Add(this);
+
+            if (!student.Assignments.Contains(assignment))
+            {
+                student.AddAssignment(assignment);
+            }
+            if (!assignment.Students.Contains(student)) {
+                assignment.AddStudent(student);
+            }
+        }
+
+        public static void RemoveSubmittedAssignment(SubmittedAssignment submittedAssignment)
+        {
+            if (submittedAssignment == null) throw new ArgumentNullException(nameof(submittedAssignment), "Submitted Assignment cannot be null.");
+            if (!submissionsList.Remove(submittedAssignment))
+            {
+                throw new ArgumentException("Submitted Assignment does not exist in the global list.");
+            }
+
+            // Reverse disconnection
+            if (submittedAssignment.Student.Assignments.Contains(submittedAssignment.Assignment))
+            {
+                submittedAssignment.Student.RemoveAssignment(submittedAssignment.Assignment);
+            }
+            if (submittedAssignment.Assignment.Students.Contains(submittedAssignment.Student))
+            {
+                submittedAssignment.Assignment.RemoveStudent(submittedAssignment.Student);
+            }
         }
 
         public static void SaveSubmissions(string path = "submission.xml")

@@ -107,7 +107,7 @@ namespace BYT_Project
 
             if (tempStudent.Payments.Contains(this))
             {
-                tempStudent.RemovePayment(this); 
+                tempStudent.RemovePayment(this);
             }
         }
 

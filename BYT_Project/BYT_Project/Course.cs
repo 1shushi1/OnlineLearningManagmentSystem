@@ -120,7 +120,7 @@ namespace BYT_Project
             _students.Add(student);
             if (!student.Courses.Contains(this))
             {
-                student.AddCourse(this); 
+                student.AddCourse(this);
             }
         }
 
@@ -132,7 +132,7 @@ namespace BYT_Project
 
             if (student.Courses.Contains(this))
             {
-                student.RemoveCourse(this); 
+                student.RemoveCourse(this);
             }
         }
 
@@ -155,7 +155,7 @@ namespace BYT_Project
             _lessons.Add(lesson);
             if (lesson.Course != this)
             {
-                lesson.AssignToCourse(this); 
+                lesson.AssignToCourse(this);
             }
         }
 
@@ -167,7 +167,7 @@ namespace BYT_Project
 
             if (lesson.Course == this)
             {
-                lesson.RemoveCourse(); 
+                lesson.RemoveCourse();
             }
         }
 

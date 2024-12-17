@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfQuestion xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Question>
+    <QuestionID>1</QuestionID>
+    <Text>What is 2 + 2?</Text>
+    <Options>
+      <string>A</string>
+      <string>B</string>
+      <string>C</string>
+      <string>D</string>
+    </Options>
+    <CorrectAnswer>B</CorrectAnswer>
+    <QuestionType>MultipleChoice</QuestionType>
+  </Question>
+</ArrayOfQuestion>

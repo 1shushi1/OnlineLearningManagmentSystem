@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfTimetable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Timetable>
+    <TimetableID>1</TimetableID>
+    <StartDate>2024-12-15T23:13:33.4012415+01:00</StartDate>
+    <EndDate>2025-01-15T23:13:33.401243+01:00</EndDate>
+    <Schedule>
+      <Entry>Mon 10:00 AM</Entry>
+      <Entry>Wed 10:00 AM</Entry>
+    </Schedule>
+  </Timetable>
+</ArrayOfTimetable>

@@ -1,0 +1,72 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Mateusz\\Desktop\\OnlineLearningManagmentSystem-master\\BYT_Project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{316C46EA-F0D7-4919-840E-2DD0C7FA1E21}|BYT_Project\\BYT_Project.csproj|c:\\users\\mateusz\\desktop\\onlinelearningmanagmentsystem-master\\byt_project\\byt_project\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{316C46EA-F0D7-4919-840E-2DD0C7FA1E21}|BYT_Project\\BYT_Project.csproj|solutionrelative:byt_project\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{316C46EA-F0D7-4919-840E-2DD0C7FA1E21}|BYT_Project\\BYT_Project.csproj|c:\\users\\mateusz\\desktop\\onlinelearningmanagmentsystem-master\\byt_project\\byt_project\\lesson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{316C46EA-F0D7-4919-840E-2DD0C7FA1E21}|BYT_Project\\BYT_Project.csproj|solutionrelative:byt_project\\lesson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 275,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Question.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\OnlineLearningManagmentSystem-master\\BYT_Project\\BYT_Project\\Question.cs",
+              "RelativeDocumentMoniker": "BYT_Project\\Question.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\OnlineLearningManagmentSystem-master\\BYT_Project\\BYT_Project\\Question.cs",
+              "RelativeToolTip": "BYT_Project\\Question.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAkwHcAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T14:29:13.352Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Lesson.cs",
+              "DocumentMoniker": "C:\\Users\\Mateusz\\Desktop\\OnlineLearningManagmentSystem-master\\BYT_Project\\BYT_Project\\Lesson.cs",
+              "RelativeDocumentMoniker": "BYT_Project\\Lesson.cs",
+              "ToolTip": "C:\\Users\\Mateusz\\Desktop\\OnlineLearningManagmentSystem-master\\BYT_Project\\BYT_Project\\Lesson.cs",
+              "RelativeToolTip": "BYT_Project\\Lesson.cs",
+              "ViewState": "AgIAAJgAAAAAAAAAAAAuwIwAAABcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-16T14:17:12.682Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

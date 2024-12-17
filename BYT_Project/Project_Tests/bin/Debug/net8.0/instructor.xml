@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfInstructor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Instructor>
+    <InstructorID>1</InstructorID>
+    <Expertise>Mathematics</Expertise>
+    <OfficeHours>MWF 10:00-12:00</OfficeHours>
+  </Instructor>
+  <Instructor>
+    <InstructorID>2</InstructorID>
+    <Expertise>Computer Science</Expertise>
+  </Instructor>
+</ArrayOfInstructor>

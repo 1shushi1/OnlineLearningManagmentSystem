@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ArrayOfQuiz xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Quiz>
-    <QuizID>1</QuizID>
-    <Title>Math Quiz</Title>
-    <TotalScore>100</TotalScore>
-    <PassMark>60</PassMark>
-  </Quiz>
-</ArrayOfQuiz>

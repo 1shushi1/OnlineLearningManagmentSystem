@@ -16,6 +16,9 @@ namespace BYT_Project
         private List<Lesson> _lessons = new List<Lesson>(); // zero-to-many relation with Lesson, Course composes of Lesson
         private Instructor _instructor; // one-to-one relation with Instructor, Course aggregates Instructor
         private Timetable? _timetable; // zero-to-one relation with Timetable, Course aggregates Timetable
+        private List<Payment> _payments = new List<Payment>(); // Aggregation: Course to Payment (one-to-many)
+        public IReadOnlyList<Payment> Payments => _payments.AsReadOnly(); // Encapsulated getter for payments
+
 
         public int CourseID
         {
@@ -71,6 +74,38 @@ namespace BYT_Project
             Description = description;
             MaxEnrollment = maxEnrollment;
             coursesList.Add(this);
+        }
+
+        public void AddPayment(Payment payment)
+        {
+            if (payment == null) throw new ArgumentNullException(nameof(payment));
+            if (_payments.Contains(payment)) throw new ArgumentException("Payment is already added to this course.");
+            if (payment.Course != null && payment.Course != this)
+                throw new ArgumentException("Payment is already associated with another course.");
+
+            _payments.Add(payment);
+            payment.SetCourse(this); // Reverse connection
+        }
+
+        public void RemovePayment(Payment payment)
+        {
+            if (payment == null) throw new ArgumentNullException(nameof(payment));
+            if (!_payments.Contains(payment)) throw new ArgumentException("Payment is not associated with this course.");
+
+            _payments.Remove(payment);
+            if (payment.Course == this)
+            {
+                payment.RemoveCourse(); // Reverse connection
+            }
+        }
+
+        public void UpdatePayment(Payment oldPayment, Payment newPayment)
+        {
+            if (oldPayment == null || newPayment == null)
+                throw new ArgumentException("Both old and new payments must be provided.");
+
+            RemovePayment(oldPayment);
+            AddPayment(newPayment);
         }
 
         public void AddStudent(Student student)

@@ -998,19 +998,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mateusz\\.nuget\\packages\\": {}
+    "C:\\Users\\bemro\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mateusz\\Desktop\\OnlineLearningManagmentSystem-master\\BYT_Project\\Project_Tests\\Project_Tests.csproj",
+      "projectUniqueName": "C:\\Users\\bemro\\Source\\Repos\\OnlineLearningManagmentSystem\\BYT_Project\\Project_Tests\\Project_Tests.csproj",
       "projectName": "Project_Tests",
-      "projectPath": "C:\\Users\\Mateusz\\Desktop\\OnlineLearningManagmentSystem-master\\BYT_Project\\Project_Tests\\Project_Tests.csproj",
-      "packagesPath": "C:\\Users\\Mateusz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mateusz\\Desktop\\OnlineLearningManagmentSystem-master\\BYT_Project\\Project_Tests\\obj\\",
+      "projectPath": "C:\\Users\\bemro\\Source\\Repos\\OnlineLearningManagmentSystem\\BYT_Project\\Project_Tests\\Project_Tests.csproj",
+      "packagesPath": "C:\\Users\\bemro\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bemro\\Source\\Repos\\OnlineLearningManagmentSystem\\BYT_Project\\Project_Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Mateusz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\bemro\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1024,8 +1024,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Mateusz\\Desktop\\OnlineLearningManagmentSystem-master\\BYT_Project\\BYT_Project\\BYT_Project.csproj": {
-              "projectPath": "C:\\Users\\Mateusz\\Desktop\\OnlineLearningManagmentSystem-master\\BYT_Project\\BYT_Project\\BYT_Project.csproj"
+            "C:\\Users\\bemro\\Source\\Repos\\OnlineLearningManagmentSystem\\BYT_Project\\BYT_Project\\BYT_Project.csproj": {
+              "projectPath": "C:\\Users\\bemro\\Source\\Repos\\OnlineLearningManagmentSystem\\BYT_Project\\BYT_Project\\BYT_Project.csproj"
             }
           }
         }

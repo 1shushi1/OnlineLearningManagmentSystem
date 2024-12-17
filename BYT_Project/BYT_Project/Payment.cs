@@ -11,8 +11,34 @@ namespace BYT_Project
         private double _amount;
         private DateTime _paymentDate;
         private Student _student; // one-to-one relation with Student, Payment aggregates Student
+        private Course? _course; // Aggregation: Payment to Course (zero-to-many)
+        public Course? Course => _course; // Getter for Course
 
-        // to do Payment - Course relation
+        public void SetCourse(Course course)
+        {
+            if (_course == course) return;
+
+            _course?.RemovePayment(this); // Remove reverse connection from old course
+            _course = course;
+
+            if (course != null && !course.Payments.Contains(this))
+            {
+                course.AddPayment(this); // Add reverse connection to new course
+            }
+        }
+
+        public void RemoveCourse()
+        {
+            if (_course == null) return;
+
+            var tempCourse = _course;
+            _course = null;
+
+            if (tempCourse.Payments.Contains(this))
+            {
+                tempCourse.RemovePayment(this); // Remove reverse connection
+            }
+        }
 
         public int PaymentID
         {

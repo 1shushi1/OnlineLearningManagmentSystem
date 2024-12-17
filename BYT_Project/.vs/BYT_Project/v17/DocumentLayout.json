@@ -1,7 +1,20 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Mateusz\\Desktop\\OnlineLearningManagmentSystem-master\\BYT_Project\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2246059-34C1-4104-9CEB-80BBBD73B173}|Project_Tests\\Project_Tests.csproj|c:\\users\\bemro\\source\\repos\\onlinelearningmanagmentsystem\\byt_project\\project_tests\\relation_tests\\coursepaymentrelationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2246059-34C1-4104-9CEB-80BBBD73B173}|Project_Tests\\Project_Tests.csproj|solutionrelative:project_tests\\relation_tests\\coursepaymentrelationtests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{316C46EA-F0D7-4919-840E-2DD0C7FA1E21}|BYT_Project\\BYT_Project.csproj|c:\\users\\bemro\\source\\repos\\onlinelearningmanagmentsystem\\byt_project\\byt_project\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{316C46EA-F0D7-4919-840E-2DD0C7FA1E21}|BYT_Project\\BYT_Project.csproj|solutionrelative:byt_project\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{316C46EA-F0D7-4919-840E-2DD0C7FA1E21}|BYT_Project\\BYT_Project.csproj|c:\\users\\bemro\\source\\repos\\onlinelearningmanagmentsystem\\byt_project\\byt_project\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{316C46EA-F0D7-4919-840E-2DD0C7FA1E21}|BYT_Project\\BYT_Project.csproj|solutionrelative:byt_project\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,15 +22,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 275,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CoursePaymentRelationTests.cs",
+              "DocumentMoniker": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\Project_Tests\\Relation_Tests\\CoursePaymentRelationTests.cs",
+              "RelativeDocumentMoniker": "Project_Tests\\Relation_Tests\\CoursePaymentRelationTests.cs",
+              "ToolTip": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\Project_Tests\\Relation_Tests\\CoursePaymentRelationTests.cs",
+              "RelativeToolTip": "Project_Tests\\Relation_Tests\\CoursePaymentRelationTests.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAmwG0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T13:47:07.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\BYT_Project\\Payment.cs",
+              "RelativeDocumentMoniker": "BYT_Project\\Payment.cs",
+              "ToolTip": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\BYT_Project\\Payment.cs",
+              "RelativeToolTip": "BYT_Project\\Payment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T13:41:21.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Course.cs",
+              "DocumentMoniker": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\BYT_Project\\Course.cs",
+              "RelativeDocumentMoniker": "BYT_Project\\Course.cs",
+              "ToolTip": "C:\\Users\\bemro\\source\\repos\\OnlineLearningManagmentSystem\\BYT_Project\\BYT_Project\\Course.cs",
+              "RelativeToolTip": "BYT_Project\\Course.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAA4wGwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-17T13:41:10.082Z"
             }
           ]
         },

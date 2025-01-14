@@ -6,7 +6,7 @@ using System.Xml.Serialization;
 namespace BYT_Project
 {
     [Serializable]
-    public class Admin
+    public class Admin : User
     {
         private static List<Admin> adminsList = new List<Admin>();
         private int _adminID;
@@ -37,7 +37,8 @@ namespace BYT_Project
 
         public Admin() { }
 
-        public Admin(int adminID, List<string> permissions, List<User> managedUsers = null)
+        public Admin(int userID, string name, string email, string password, int adminID, List<string> permissions, List<User> managedUsers = null)
+            : base(userID, name, email, password)
         {
             AdminID = adminID;
             Permissions = permissions;
@@ -57,7 +58,7 @@ namespace BYT_Project
         public void AddUser(User user)
         {
             if (user == null) throw new ArgumentException("User cannot be null.");
-            
+
             // Check for duplicate relationship
             if (_managedUsers.Contains(user)) throw new ArgumentException("User is already managed by this admin.");
 

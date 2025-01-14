@@ -5,7 +5,7 @@ using System.Xml.Serialization;
 namespace BYT_Project
 {
     [Serializable]
-    public class Student
+    public class Student : User
     {
         private static List<Student> studentsList = new List<Student>();
         private int _studentID;
@@ -32,7 +32,8 @@ namespace BYT_Project
 
         public Student() { }
 
-        public Student(int studentID)
+        public Student(int userID, string name, string email, string password, int studentID, List<String> courses)
+            : base(userID, name, email, password)
         {
             StudentID = studentID;
             studentsList.Add(this);
@@ -47,7 +48,7 @@ namespace BYT_Project
             _assignments.Add(assignment);
             if (!assignment.Students.Contains(this))
             {
-                assignment.AddStudent(this); 
+                assignment.AddStudent(this);
             }
         }
 
@@ -59,7 +60,7 @@ namespace BYT_Project
             if (!_assignments.Remove(assignment)) throw new ArgumentException("Assignment is not added to this student.");
             if (assignment.Students.Contains(this))
             {
-                assignment.RemoveStudent(this); 
+                assignment.RemoveStudent(this);
             }
         }
 
@@ -113,7 +114,7 @@ namespace BYT_Project
             RemovePayment(oldPayment);
             AddPayment(newPayment);
         }
-       
+
         public void AddCourse(Course course)
         {
             if (course == null) throw new ArgumentException("Course cannot be null.");
@@ -129,11 +130,11 @@ namespace BYT_Project
             _courses.Add(course);
             if (!course.Students.Contains(this))
             {
-                course.AddStudent(this);  
+                course.AddStudent(this);
             }
         }
 
-    public void RemoveCourse(Course course)
+        public void RemoveCourse(Course course)
         {
             if (course == null) throw new ArgumentException("Course cannot be null.");
 
@@ -142,7 +143,7 @@ namespace BYT_Project
 
             if (course.Students.Contains(this))
             {
-                course.RemoveStudent(this); 
+                course.RemoveStudent(this);
             }
         }
 

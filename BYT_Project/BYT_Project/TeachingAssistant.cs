@@ -3,9 +3,27 @@ using System.Xml.Serialization;
 
 namespace BYT_Project
 {
-    [Serializable]
-    public class TeachingAssistant
+    public interface IInstructor
     {
+        string Expertise { get; set; }
+        string? OfficeHours { get; set; }
+    }
+
+    public interface IStudent
+    {
+        int StudentID { get; set; }
+        List<string> Courses { get; set; }
+    }
+
+    [Serializable]
+    public class TeachingAssistant : IInstructor, IStudent
+    {
+        public string Expertise { get; set; }
+        public string? OfficeHours { get; set; }
+        public int StudentID { get; set; }
+        public List<string> Courses { get; set; } = new List<string>();
+
+
         private static List<TeachingAssistant> teachingAssistantsList = new List<TeachingAssistant>();
         private int _teachingAssistantID;
         private int _experience;
@@ -31,10 +49,15 @@ namespace BYT_Project
         }
         public TeachingAssistant() { }
 
-        public TeachingAssistant(int teachingAssistantID, int experience)
+        public TeachingAssistant(int teachingAssistantID, int experience, string expertise,
+            string? officeHours, int studentID, List<string> courses)
         {
             TeachingAssistantID = teachingAssistantID;
             Experience = experience;
+            Expertise = expertise;
+            OfficeHours = officeHours;
+            StudentID = studentID;
+            Courses = courses;
             teachingAssistantsList.Add(this);
         }
 

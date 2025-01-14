@@ -73,15 +73,17 @@ namespace BYT_Project
 
         public Assignment() { }
 
-        public Assignment(int assignmentID, string title, string description, DateTime dueDate, int maxScore)
+        public Assignment(int assignmentID, string title, string description, DateTime dueDate, int maxScore, Lesson lesson)
         {
             AssignmentID = assignmentID;
             Title = title;
             Description = description;
             DueDate = dueDate;
             MaxScore = maxScore;
+            AssignToLesson(lesson); // Automatically establishes composition
             assignmentsList.Add(this);
         }
+
 
         public void AddStudent(Student student)
         {
@@ -145,17 +147,17 @@ namespace BYT_Project
 
         public void RemoveLesson()
         {
-            if (_lesson == null) throw new ArgumentException("Assignment is not assigned to any lesson.");
+            if (_lesson == null) return;
 
             var tempLesson = _lesson;
             _lesson = null;
 
-            // Remove from the lesson's assignments list
             if (tempLesson.Assignments.Contains(this))
             {
-                tempLesson.RemoveAssignment(this); // Ensure reverse disconnection
+                tempLesson.RemoveAssignment(this); // Clear from lesson
             }
         }
+
 
 
 

@@ -62,12 +62,13 @@ namespace BYT_Project
         public IReadOnlyList<Assignment> Assignments => _assignments.AsReadOnly();
 
         public Lesson() { }
-        public Lesson(int lessonID, string lessonTitle, string videoURL, string lessonDescription)
+        public Lesson(int lessonID, string lessonTitle, string videoURL, string lessonDescription, Course course)
         {
             LessonID = lessonID;
             LessonTitle = lessonTitle;
             VideoURL = videoURL;
             LessonDescription = lessonDescription;
+            AssignToCourse(course); // Automatically establishes composition
             lessonsList.Add(this);
         }
         public void AssignToCourse(Course course)
@@ -152,21 +153,23 @@ namespace BYT_Project
         {
             if (lesson == null) throw new ArgumentException("Lesson cannot be null.");
 
-            foreach (var assignment in new List<Assignment>(lesson._assignments))
+            // Delete associated assignments
+            foreach (var assignment in new List<Assignment>(lesson.Assignments))
             {
-                // Removes all assignments associated with the lesson to maintain reverse connection integrity
-                lesson.RemoveAssignment(assignment);
+                assignment.RemoveLesson();
+                Assignment.AssignmentsList.Remove(assignment); // Remove globally
             }
 
-            foreach (var quiz in new List<Quiz>(lesson.quizzes))
+            // Delete associated quizzes
+            foreach (var quiz in new List<Quiz>(lesson.Quizzes))
             {
-                // Removes all quizzes associated with the lesson, ensuring reverse connections are cleared
-                lesson.RemoveQuiz(quiz); 
+                quiz.RemoveLesson();
+                Quiz.QuizzesList.Remove(quiz); // Remove globally
             }
-            // Finally removes the lesson itself from the static lessons list
-            // This ensures that the "whole" (lesson) is deleted along with its "parts" (assignments and quizzes)
-            lessonsList.Remove(lesson);
+
+            lessonsList.Remove(lesson); // Remove the lesson itself
         }
+
 
         public void AddQuiz(Quiz quiz)
         {

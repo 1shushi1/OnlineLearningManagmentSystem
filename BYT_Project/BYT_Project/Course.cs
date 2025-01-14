@@ -162,14 +162,13 @@ namespace BYT_Project
         public void RemoveLesson(Lesson lesson)
         {
             if (lesson == null) throw new ArgumentException("Lesson cannot be null.");
-            if (!_lessons.Remove(lesson)) throw new ArgumentException("Lesson is not added to this course.");
-            // Ensures the lesson is in the `_lessons` list before attempting to remove
 
-            if (lesson.Course == this)
-            {
-                lesson.RemoveCourse();
-            }
+            // Cascade deletion for lessons
+            Lesson.DeleteLesson(lesson);
+
+            _lessons.Remove(lesson);
         }
+
 
         public void SetInstructor(Instructor? instructor)
         {

@@ -62,14 +62,16 @@ namespace BYT_Project
         public IReadOnlyDictionary<string, Question> Questions => _questions;
         public IReadOnlyList<Quiz> RelatedQuizzes => _relatedQuizzes.AsReadOnly();
         public Quiz() { }
-        public Quiz(int quizID, string title, int totalScore, int passMark)
+        public Quiz(int quizID, string title, int totalScore, int passMark, Lesson lesson)
         {
             QuizID = quizID;
             Title = title;
             TotalScore = totalScore;
             PassMark = passMark;
+            AssignToLesson(lesson); // Automatically establishes composition
             quizzesList.Add(this);
         }
+
 
         public void AddQuestion(string qualifier, Question question)
         {
@@ -188,10 +190,9 @@ namespace BYT_Project
 
             if (tempLesson.Quizzes.Contains(this))
             {
-                tempLesson.RemoveQuiz(this);
+                tempLesson.RemoveQuiz(this); // Clear from lesson
             }
         }
-
 
         public static List<Quiz> QuizzesList => new List<Quiz>(quizzesList);
     }

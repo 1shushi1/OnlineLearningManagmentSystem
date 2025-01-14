@@ -6,7 +6,7 @@ using System.Xml.Serialization;
 namespace BYT_Project
 {
     [Serializable]
-    public class Instructor
+    public class Instructor : User
     {
         private static List<Instructor> instructorsList = new List<Instructor>();
         private List<Course> courses = new List<Course>(); // zero-to-many relation with Course, Course composes of Instructor
@@ -52,7 +52,8 @@ namespace BYT_Project
 
         public Instructor() { }
 
-        public Instructor(int instructorID, string expertise, string officeHours = null)
+        public Instructor(int userID, string name, string email, string password, int instructorID, string expertise, string officeHours = null)
+            : base(userID, name, email, password)
         {
             InstructorID = instructorID;
             Expertise = expertise;
@@ -85,7 +86,7 @@ namespace BYT_Project
             if (course == null) throw new ArgumentNullException(nameof(course));
 
             // If the course is not in the instructor's list, throws an exception
-            if (!courses.Remove(course)) 
+            if (!courses.Remove(course))
             {
                 throw new ArgumentException("Course is not added to this instructor.");
             }

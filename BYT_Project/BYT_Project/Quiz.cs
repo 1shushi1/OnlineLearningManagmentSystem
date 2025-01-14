@@ -192,7 +192,14 @@ namespace BYT_Project
             {
                 tempLesson.RemoveQuiz(this); // Clear from lesson
             }
+
+            // Validate and remove from global list
+            if (quizzesList.Contains(this))
+            {
+                quizzesList.Remove(this);
+            }
         }
+
 
         public static List<Quiz> QuizzesList => new List<Quiz>(quizzesList);
     }

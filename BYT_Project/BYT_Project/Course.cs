@@ -166,8 +166,13 @@ namespace BYT_Project
             // Cascade deletion for lessons
             Lesson.DeleteLesson(lesson);
 
-            _lessons.Remove(lesson);
+            // Validate and remove from course's lesson list
+            if (_lessons.Contains(lesson))
+            {
+                _lessons.Remove(lesson);
+            }
         }
+
 
 
         public void SetInstructor(Instructor? instructor)

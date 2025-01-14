@@ -157,18 +157,29 @@ namespace BYT_Project
             foreach (var assignment in new List<Assignment>(lesson.Assignments))
             {
                 assignment.RemoveLesson();
-                Assignment.AssignmentsList.Remove(assignment); // Remove globally
+                if (Assignment.AssignmentsList.Contains(assignment))
+                {
+                    Assignment.AssignmentsList.Remove(assignment); // Validate before removal
+                }
             }
 
             // Delete associated quizzes
             foreach (var quiz in new List<Quiz>(lesson.Quizzes))
             {
                 quiz.RemoveLesson();
-                Quiz.QuizzesList.Remove(quiz); // Remove globally
+                if (Quiz.QuizzesList.Contains(quiz))
+                {
+                    Quiz.QuizzesList.Remove(quiz); // Validate before removal
+                }
             }
 
-            lessonsList.Remove(lesson); // Remove the lesson itself
+            // Validate and remove the lesson itself
+            if (lessonsList.Contains(lesson))
+            {
+                lessonsList.Remove(lesson);
+            }
         }
+
 
 
         public void AddQuiz(Quiz quiz)

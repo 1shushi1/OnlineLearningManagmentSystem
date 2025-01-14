@@ -156,7 +156,14 @@ namespace BYT_Project
             {
                 tempLesson.RemoveAssignment(this); // Clear from lesson
             }
+
+            // Validate and remove from global list
+            if (assignmentsList.Contains(this))
+            {
+                assignmentsList.Remove(this);
+            }
         }
+
 
 
 

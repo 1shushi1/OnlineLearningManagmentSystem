@@ -1,13 +1,8 @@
-﻿using System;
+using System;
 using System.Xml.Serialization;
 
 namespace BYT_Project
 {
-    public interface IInstructor
-    {
-        string Expertise { get; set; }
-        string? OfficeHours { get; set; }
-    }
 
     public interface IStudent
     {
@@ -16,7 +11,7 @@ namespace BYT_Project
     }
 
     [Serializable]
-    public class TeachingAssistant : IInstructor, IStudent
+    public class TeachingAssistant : Instructor, IStudent
     {
         public string Expertise { get; set; }
         public string? OfficeHours { get; set; }
@@ -48,17 +43,48 @@ namespace BYT_Project
             }
         }
         public TeachingAssistant() { }
-
+        /*
         public TeachingAssistant(int teachingAssistantID, int experience, string expertise,
             string? officeHours, int studentID, List<string> courses)
         {
             TeachingAssistantID = teachingAssistantID;
             Experience = experience;
+
             Expertise = expertise;
             OfficeHours = officeHours;
+
             StudentID = studentID;
             Courses = courses;
+            
             teachingAssistantsList.Add(this);
+        }
+        */
+
+        // Copy constructor for multi-inheritance
+        public TeachingAssistant(Instructor instructor, int studentID, List<string> courses)
+            : base(instructor.UserID, instructor.Name, instructor.Email, instructor.Password, instructor.InstructorID, instructor.Expertise, instructor.OfficeHours)
+        {
+            if (instructor == null) throw new ArgumentNullException(nameof(instructor));
+
+            // Copy attributes from Instructor
+            Expertise = instructor.Expertise;
+            OfficeHours = instructor.OfficeHours;
+
+            // Assign IStudent attributes
+            StudentID = studentID;
+            Courses = new List<string>(courses);
+
+            // Set TeachingAssistant-specific attributes
+            TeachingAssistantID = GenerateUniqueTeachingAssistantID();
+            Experience = 0; // Default value; can be updated later
+
+            teachingAssistantsList.Add(this);
+        }
+
+        // Generate a unique TeachingAssistantID
+        private int GenerateUniqueTeachingAssistantID()
+        {
+            return teachingAssistantsList.Count + 1; // Example logic for ID generation
         }
 
         public static void SaveTeachingAssistants(string path = "teachingAssistant.xml")
